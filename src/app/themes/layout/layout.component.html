@@ -1,0 +1,25 @@
+<main>
+  <section class="header"></section>
+
+  <section class="side-bar">
+    <article class="nav">
+      <a [routerLink]="'/'" class="logo">
+        <img src="assets/icons/logo.svg" alt="logo" />
+      </a>
+      @for (item of navbarItems; track item.title) {
+      <div class="nav-item">
+        <a href="" [routerLink]="item.route" routerLinkActive="active-link green-line-hover">
+          <div>
+            <img [src]="'assets/icons/' + item.icon" alt="icon" class="icon" />
+          </div>
+          <span class="title">{{ item.title }}</span>
+        </a>
+      </div>
+      }
+    </article>
+  </section>
+
+  <section class="router">
+    <ng-content></ng-content>
+  </section>
+</main>

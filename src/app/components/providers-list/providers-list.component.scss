@@ -1,0 +1,82 @@
+$content-height: 53px;
+
+@mixin active {
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    border-radius: 3px 3px 0 0;
+    bottom: 0;
+    background-color: var(--active-green-color);
+  }
+}
+
+.providers-container {
+  background: #272d36;
+  display: flex;
+  overflow: hidden;
+  height: $content-height;
+
+  &.expanded {
+    height: auto;
+  }
+  .providers {
+    display: flex;
+    flex-wrap: wrap;
+    background: #272d36;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    .provider-item {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      height: $content-height;
+      position: relative;
+      cursor: pointer;
+      justify-content: center;
+      font-size: 14px;
+      line-height: 14px;
+      font-weight: 500;
+      color: #d9e3ef;
+      &:hover {
+        @include active();
+      }
+    }
+  }
+
+  .see-more {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    padding: 10px;
+    white-space: nowrap;
+    height: $content-height;
+
+    span {
+      display: flex;
+      align-items: center;
+    }
+
+    .expand-icon {
+      width: 14px;
+      margin-left: 12px;
+      transition: 0.2s;
+    }
+
+    & .rotated {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.active-provider {
+  @include active();
+}

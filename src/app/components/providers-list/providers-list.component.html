@@ -1,0 +1,16 @@
+<div class="providers-container" [class.expanded]="isExpanded">
+  <div class="providers">
+    @for (provider of providers(); track provider.provider) {
+    <span
+      (click)="setProvidersFilter(provider.provider)"
+      class="provider-item"
+      [ngClass]="{ 'active-provider': slotsService.currentFilter().value == provider.provider }">
+      {{ provider.name }}
+    </span>
+    }
+  </div>
+  <button class="see-more" (click)="isExpanded = !isExpanded">
+    <span>{{ isExpanded ? 'See less' : 'See more' }}</span>
+    <img src="assets/icons/expand.svg" alt="icon" class="expand-icon" [ngClass]="{ rotated: !isExpanded }" />
+  </button>
+</div>

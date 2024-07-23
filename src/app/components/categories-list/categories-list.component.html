@@ -1,0 +1,16 @@
+<div class="categories">
+  @for (category of slotCategories; track category.category) {
+  <div
+    (click)="setCategoryFilter(category.category)"
+    class="category-item"
+    [ngClass]="{
+      'active-category': slotsService.currentFilter().value == category.category
+    }">
+    <img [src]="'assets/icons/' + category.icon" alt="category icon" />
+    <p>{{ category.name }}</p>
+    @if (slotsService.totalGames()) {
+    <span class="total-games">{{ slotsService.totalGames()?.[category.category] }}</span>
+    }
+  </div>
+  }
+</div>

@@ -1,0 +1,17 @@
+<section>
+  <article class="banner-container">
+    <img src="assets/banners/banner.svg" alt="banner" />
+  </article>
+  <article class="category-container">
+    <app-categories-list></app-categories-list>
+    <app-providers-list></app-providers-list>
+  </article>
+
+  @if (slotsService.slots()) {
+  <article class="cards-wrapper">
+    @for (slot of slotsService.slots(); track slot.game_id) {
+    <app-slot-card [slot]="slot"></app-slot-card>
+    }
+  </article>
+  }
+</section>

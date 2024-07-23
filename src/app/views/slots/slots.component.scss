@@ -1,0 +1,28 @@
+section {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  padding: 5px;
+}
+
+.banner-container {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+.cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+  gap: 12px;
+  padding: 12px;
+  app-slot-card:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
