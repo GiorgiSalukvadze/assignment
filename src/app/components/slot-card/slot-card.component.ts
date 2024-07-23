@@ -1,11 +1,12 @@
 import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { GameI } from '../../models/slots';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-slot-card',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, TranslateModule],
   templateUrl: './slot-card.component.html',
   styleUrl: './slot-card.component.scss'
 })

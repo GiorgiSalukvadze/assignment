@@ -7,9 +7,9 @@
       'active-category': slotsService.currentFilter().value == category.category
     }">
     <img [src]="'assets/icons/' + category.icon" alt="category icon" />
-    <p>{{ category.name }}</p>
-    @if (slotsService.totalGames()) {
-    <span class="total-games">{{ slotsService.totalGames()?.[category.category] }}</span>
+    <p>{{ category.name | translate }}</p>
+    @if (totalGames()) {
+    <span class="total-games">{{ totalGames()?.[category.category] }}</span>
     }
   </div>
   }

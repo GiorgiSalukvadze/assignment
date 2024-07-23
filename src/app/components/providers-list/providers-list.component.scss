@@ -28,7 +28,6 @@ $content-height: 53px;
     background: #272d36;
     align-items: center;
     padding-left: 1rem;
-    padding-right: 1rem;
 
     .provider-item {
       display: flex;
@@ -56,7 +55,7 @@ $content-height: 53px;
     cursor: pointer;
     border: none;
     outline: none;
-    padding: 10px;
+    padding: 20px;
     white-space: nowrap;
     height: $content-height;
 

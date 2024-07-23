@@ -3,11 +3,12 @@ import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FilterTypes, ProviderI } from '../../models/slots';
 import { SlotsService } from '../../services/slots.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-providers-list',
   standalone: true,
-  imports: [NgClass],
+  imports: [NgClass, TranslateModule],
   templateUrl: './providers-list.component.html',
   styleUrl: './providers-list.component.scss'
 })

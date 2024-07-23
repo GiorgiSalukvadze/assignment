@@ -31,16 +31,16 @@ export class SlotsService {
     }
   );
 
-  getCategoriesInfo(): Observable<{ data: SlotCategoryI[] }> {
+  getCategoriesInfo(): Observable<{ [key: string]: number }> {
     const totalGames: { [key: string]: number } = {};
     return this.http.get<{ data: SlotCategoryI[] }>(SlotsEndpointsEnum.getCategories()).pipe(
-      tap((res: { data: SlotCategoryI[] }) => {
-        res.data.forEach((category: any) => {
-          if (Object.values(SlotCategoriesEnum).includes(category.category)) {
+      map((res: { data: SlotCategoryI[] }) => {
+        res.data.forEach((category: SlotCategoryI) => {
+          if ((Object.values(SlotCategoriesEnum) as string[]).includes(category.category)) {
             totalGames[category.category] = category.totalGames;
           }
         });
-        this.totalGames.set(totalGames);
+        return totalGames;
       })
     );
   }

@@ -13,6 +13,14 @@ main {
   justify-content: end;
   height: var(--header-height);
   background-color: var(--dark-bg-color);
+  align-items: center;
+  padding-right: 40px;
+  img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+  }
 }
 
 .side-bar {

@@ -10,7 +10,7 @@
     }
   </div>
   <button class="see-more" (click)="isExpanded = !isExpanded">
-    <span>{{ isExpanded ? 'See less' : 'See more' }}</span>
+    <span>{{ (isExpanded ? "BUTTON.see_less" : "BUTTON.see_more") | translate }}</span>
     <img src="assets/icons/expand.svg" alt="icon" class="expand-icon" [ngClass]="{ rotated: !isExpanded }" />
   </button>
 </div>

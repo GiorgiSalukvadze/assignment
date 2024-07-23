@@ -1,0 +1,20 @@
+{
+    "NAVBAR": {
+      "sport": "Sport",
+      "live": "Live",
+      "slots": "Slots",
+      "casino": "Casino"
+    },
+    "CATEGORY": {
+      "popular": "Top Slots",
+      "favorites": "Favorites",
+      "new_games": "New Games",
+      "buy_bonus": "Buy Bonus",
+      "history": "History"
+    },
+    "BUTTON": {
+      "see_more": "See more",
+      "see_less": "See less",
+      "play": "Play"
+    }
+  }

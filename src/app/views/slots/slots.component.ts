@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, DestroyRef, inject, OnInit } from '@angular/core';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { CategoriesListComponent } from '../../components/categories-list/categories-list.component';
 import { ProvidersListComponent } from '../../components/providers-list/providers-list.component';
 import { SlotCardComponent } from '../../components/slot-card/slot-card.component';
@@ -14,14 +13,9 @@ import { SlotsService } from '../../services/slots.service';
   styleUrls: ['./slots.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class SlotsComponent implements OnInit {
+export class SlotsComponent {
   public slotsService = inject(SlotsService);
   public slotCategories = SlotCategories;
-  private destroyRef$ = inject(DestroyRef);
-  isExpanded = false;
   slots = this.slotsService.slots;
-
-  ngOnInit() {
-    this.slotsService.getCategoriesInfo().pipe(takeUntilDestroyed(this.destroyRef$)).subscribe();
-  }
+  isExpanded = false;
 }
